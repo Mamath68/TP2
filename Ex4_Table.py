@@ -1,6 +1,6 @@
 def table_multiplication(nombre):
     table = []
-    for i in range(0, 11):
+    for i in range(11):
         resultat = round(nombre * i, 1)
         table.append(resultat)
     return table
