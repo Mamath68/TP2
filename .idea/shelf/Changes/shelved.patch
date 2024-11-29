@@ -1,0 +1,450 @@
+Index: Ex6_Scalaire.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Ex6_Scalaire.py b/Ex6_Scalaire.py
+new file mode 100644
+--- /dev/null	(date 1732883483541)
++++ b/Ex6_Scalaire.py	(date 1732883483541)
+@@ -0,0 +1,31 @@
++# Déclarer une variable nMax représentant la taille maximale des vecteurs
++nMax = 10
++
++# Déclarer deux listes vides v1 et v2
++v1 = []
++v2 = []
++
++# Demander à l'utilisateur d'entrer n, la taille effective des vecteurs
++while True:
++    n = int(input(f"Quelle est la taille de vos vecteurs [entre 1 et {nMax}] ? "))
++    if 1 <= n <= nMax:
++        break
++    else:
++        print(f"Veuillez entrer une valeur entre 1 et {nMax}.")
++
++# Demander à l'utilisateur les composantes des vecteurs v1 et v2
++print("Saisie du premier vecteur :")
++for i in range(n):
++    composante = int(input(f"v1[{i}] = "))
++    v1.append(composante)
++
++print("Saisie du second vecteur :")
++for i in range(n):
++    composante = int(input(f"v2[{i}] = "))
++    v2.append(composante)
++
++# Calculer le produit scalaire de v1 et v2
++produit_scalaire = sum(v1[i] * v2[i] for i in range(n))
++
++# Afficher le résultat
++print(f"Le produit scalaire de v1 par v2 vaut {produit_scalaire}.")
+Index: Ex7_Count.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Ex7_Count.py b/Ex7_Count.py
+new file mode 100644
+--- /dev/null	(date 1732883994007)
++++ b/Ex7_Count.py	(date 1732883994007)
+@@ -0,0 +1,24 @@
++# Avec un dictionnaire
++L1 = [2, 7, 5, 6, 7, 1, 6, 2, 1, 7]
++
++occurrences = {}
++
++for element in L1:
++    if element in occurrences:
++        occurrences[element] += 1
++    else:
++        occurrences[element] = 1
++
++element_le_plus_frequent = max(occurrences, key=occurrences.get)
++frequence = occurrences[element_le_plus_frequent]
++
++print(f"Le nombre le plus frequent dans la liste est le : {element_le_plus_frequent} ({frequence} x)")
++
++
++# Avec Count
++L1 = [2, 7, 6, 6, 5, 1, 6, 2, 1, 7]
++
++element_le_plus_frequent = max(L1, key=L1.count)
++frequence = L1.count(element_le_plus_frequent)
++
++print(f"Le nombre le plus frequent dans la liste est le : {element_le_plus_frequent} ({frequence} x)")
+Index: .idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/Project_Default.xml b/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	(date 1732869399051)
++++ b/.idea/inspectionProfiles/Project_Default.xml	(date 1732869399051)
+@@ -0,0 +1,41 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="DuplicatedCode" enabled="true" level="WEAK WARNING" enabled_by_default="true">
++      <Languages>
++        <language minSize="151" name="Python" />
++      </Languages>
++    </inspection_tool>
++    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
++      <option name="ignoredPackages">
++        <value>
++          <list size="1">
++            <item index="0" class="java.lang.String" itemvalue="pygame" />
++          </list>
++        </value>
++      </option>
++    </inspection_tool>
++    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
++      <option name="ignoredErrors">
++        <list>
++          <option value="N806" />
++          <option value="N803" />
++          <option value="N802" />
++        </list>
++      </option>
++    </inspection_tool>
++    <inspection_tool class="PyShadowingNamesInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
++    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="false" level="WARNING" enabled_by_default="false">
++      <option name="ignoredIdentifiers">
++        <list>
++          <option value="correct" />
++        </list>
++      </option>
++    </inspection_tool>
++    <inspection_tool class="SpellCheckingInspection" enabled="false" level="TYPO" enabled_by_default="false">
++      <option name="processCode" value="true" />
++      <option name="processLiterals" value="true" />
++      <option name="processComments" value="true" />
++    </inspection_tool>
++  </profile>
++</component>
+\ No newline at end of file
+Index: .idea/TP2.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/TP2.iml b/.idea/TP2.iml
+new file mode 100644
+--- /dev/null	(date 1732869399539)
++++ b/.idea/TP2.iml	(date 1732869399539)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="PYTHON_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$">
++      <excludeFolder url="file://$MODULE_DIR$/.venv" />
++    </content>
++    <orderEntry type="jdk" jdkName="Python 3.13 (TP2)" jdkType="Python SDK" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: Ex1_Countdown_While.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Ex1_Countdown_While.py b/Ex1_Countdown_While.py
+new file mode 100644
+--- /dev/null	(date 1732874854862)
++++ b/Ex1_Countdown_While.py	(date 1732874854862)
+@@ -0,0 +1,8 @@
++from time import sleep
++
++n = int(input("Entrez un nombre entier positif : "))
++
++while n >= 0:
++    print(n)
++    sleep(0.5)
++    n -= 1
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(date 1732869399551)
++++ b/.idea/modules.xml	(date 1732869399551)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/TP2.iml" filepath="$PROJECT_DIR$/.idea/TP2.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: Ex2_Random.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Ex2_Random.py b/Ex2_Random.py
+new file mode 100644
+--- /dev/null	(date 1732873705661)
++++ b/Ex2_Random.py	(date 1732873705661)
+@@ -0,0 +1,16 @@
++from random import randint
++
++valeur_recherche = randint(0, 100)
++
++nb_tentative = 0
++
++while True:
++    valeur_propose = int(input("Devinez la valeur (entre 0 et 100) : "))
++    nb_tentative += 1
++    if valeur_propose == valeur_recherche:
++        print(f"Bravo ! Vous avez deviné la valeur en {nb_tentative} tentatives.")
++        break
++    elif valeur_propose < valeur_recherche:
++        print("Le nombre recherché est plus grande.")
++    else:
++        print("Le nombre recherché est plus petite.")
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+new file mode 100644
+--- /dev/null	(date 1732869399558)
++++ b/.idea/workspace.xml	(date 1732869399558)
+@@ -0,0 +1,55 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ChangeListManager">
++    <list default="true" id="f797a270-cffd-49df-97e3-292711a71d77" name="Changes" comment="" />
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
++  </component>
++  <component name="ProjectColorInfo"><![CDATA[{
++  "associatedIndex": 3
++}]]></component>
++  <component name="ProjectId" id="2pW6EL0RXKKj6oTTDrkrxpHdFMv" />
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="ProjectViewState">
++    <option name="autoscrollToSource" value="true" />
++    <option name="hideEmptyMiddlePackages" value="true" />
++    <option name="showLibraryContents" value="true" />
++    <option name="showMembers" value="true" />
++  </component>
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "git-widget-placeholder": "main",
++    "nodejs_package_manager_path": "npm",
++    "vue.rearranger.settings.migration": "true"
++  }
++}]]></component>
++  <component name="SharedIndexes">
++    <attachedChunks>
++      <set>
++        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
++        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
++      </set>
++    </attachedChunks>
++  </component>
++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++  <component name="TaskManager">
++    <task active="true" id="Default" summary="Default task">
++      <changelist id="f797a270-cffd-49df-97e3-292711a71d77" name="Changes" comment="" />
++      <created>1732869371861</created>
++      <option name="number" value="Default" />
++      <option name="presentableId" value="Default" />
++      <updated>1732869371861</updated>
++      <workItem from="1732869373604" duration="27000" />
++    </task>
++    <servers />
++  </component>
++  <component name="TypeScriptGeneratedFilesManager">
++    <option name="version" value="3" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Ex3_Factor.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Ex3_Factor.py b/Ex3_Factor.py
+new file mode 100644
+--- /dev/null	(date 1732874854829)
++++ b/Ex3_Factor.py	(date 1732874854829)
+@@ -0,0 +1,30 @@
++def factorielle_for(n):
++    resultat = 1
++    for i in range(1, n + 1):
++        resultat *= i
++        print(f"i = {i}, factorielle = {resultat}")
++    return resultat
++
++
++def factorielle_while(n):
++    resultat = 1
++    i = 1
++    while i <= n:
++        resultat *= i
++        print(f"i = {i}, factorielle = {resultat}")
++        i += 1
++    return resultat
++
++
++choix = input("Choisissez le type de boucle (for/while) : ").strip().lower()
++
++n = int(input("Entrez un nombre entier positif : "))
++
++if choix == "for":
++    factorielle = factorielle_for(n)
++elif choix == "while":
++    factorielle = factorielle_while(n)
++else:
++    print("Choix invalide. Veuillez choisir 'for' ou 'while'.")
++
++print(f"La factorielle de {n} est {factorielle}.")
+Index: .idea/material_theme_project_new.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/material_theme_project_new.xml b/.idea/material_theme_project_new.xml
+new file mode 100644
+--- /dev/null	(date 1732869399635)
++++ b/.idea/material_theme_project_new.xml	(date 1732869399635)
+@@ -0,0 +1,10 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="MaterialThemeProjectNewConfig">
++    <option name="metadata">
++      <MTProjectMetadataState>
++        <option name="userId" value="-1b477682:193770f7d03:-7fef" />
++      </MTProjectMetadataState>
++    </option>
++  </component>
++</project>
+\ No newline at end of file
+Index: Ex4_Table.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Ex4_Table.py b/Ex4_Table.py
+new file mode 100644
+--- /dev/null	(date 1732874677673)
++++ b/Ex4_Table.py	(date 1732874677673)
+@@ -0,0 +1,17 @@
++def table_multiplication(nombre):
++    table = []
++    for i in range(0, 11):
++        resultat = round(nombre * i, 1)
++        table.append(resultat)
++    return table
++
++
++def afficher_table(table, nombre):
++    for i, resultat in enumerate(table):
++        print(f"{nombre} x {i} = {resultat}")
++
++
++nombre = float(input("Entrez un nombre (entier ou reel) : "))
++
++table = table_multiplication(nombre)
++afficher_table(table, nombre)
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/vcs.xml b/.idea/vcs.xml
+new file mode 100644
+--- /dev/null	(date 1732869399645)
++++ b/.idea/vcs.xml	(date 1732869399645)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: Ex5_Moyenne.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Ex5_Moyenne.py b/Ex5_Moyenne.py
+new file mode 100644
+--- /dev/null	(date 1732882889179)
++++ b/Ex5_Moyenne.py	(date 1732882889179)
+@@ -0,0 +1,22 @@
++nombreEtudiants = int(input("Donnez le nombre d'etudiants : "))
++moyenne = 0.0
++notes = []
++
++for i in range(nombreEtudiants):
++    while True:
++        note = float(input(f"Entrez la note de l'étudiant {i + 1} (entre 0 et 20) : "))
++        if 0 <= note <= 20:
++            notes.append(note)
++            break
++        else:
++            print("La note doit être comprise entre 0 et 20. Veuillez réessayer.")
++
++moyenne = sum(notes) / nombreEtudiants
++
++print("Les notes des étudiants sont : ", notes)
++print(f"La moyenne des notes est : {moyenne:.2f}")
++
++print("Numéro de l’Étudiant | Note | Écart à la Moyenne")
++for i, note in enumerate(notes, start=1):
++    ecart = note - moyenne
++    print(f"{i} | {note} | {ecart:.2f}")
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+new file mode 100644
+--- /dev/null	(date 1732869399623)
++++ b/.idea/inspectionProfiles/profiles_settings.xml	(date 1732869399623)
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <settings>
++    <option name="USE_PROJECT_PROFILE" value="false" />
++    <version value="1.0" />
++  </settings>
++</component>
+\ No newline at end of file
+Index: Ex1_Countdown_For.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Ex1_Countdown_For.py b/Ex1_Countdown_For.py
+new file mode 100644
+--- /dev/null	(date 1732874854896)
++++ b/Ex1_Countdown_For.py	(date 1732874854896)
+@@ -0,0 +1,7 @@
++from time import sleep
++
++n = int(input("Entrez un nombre entier positif : "))
++
++for i in range(n, -1, -1):
++    print(i)
++    sleep(0.5)
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
